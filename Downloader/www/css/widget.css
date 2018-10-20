@@ -1,0 +1,38 @@
+﻿.body {
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    padding: 20px;
+}
+.value {
+    display: grid;
+    grid-template-columns: auto 30px;
+    margin-top: 5px;
+    padding: 10px;
+}
+.value label {
+    grid-column: 1;
+    width: 100%;
+}
+.value input[type="radio"] {
+    grid-column: 2;
+    padding: 0 !important;
+    margin: 0 !important;
+    min-width: 0 !important;
+    left: 0;
+    top: 0;
+
+    -webkit-appearance: none !important;
+	background: #fafafa;
+	border: 1px solid #cacece !important;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05) !important;
+	border-radius: 5px !important;
+    width: 20px;
+    height: 20px;
+
+    transition: 0.5s;
+}
+input[type="radio"]:checked {
+    background: cornflowerblue;
+    filter: brightness(125%);
+}

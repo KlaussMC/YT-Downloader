@@ -1,0 +1,104 @@
+﻿﻿
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/widget.css" />
+
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+    <style>
+        body {
+            margin-top: -17px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        $("body").click(function () {
+            ($('.app-drawer').css('left') == '0cm') ? $('.app-drawer').css('left', '-7cm') : null;
+        })
+    </script>
+
+    <div class="app-bar">
+        <button class="app-btn" id="open-drawer-btn">
+            <img src="images/hamburger.svg" />
+        </button>
+
+        <script>
+            document.querySelector('#open-drawer-btn').addEventListener('click', function () {
+                $('.app-drawer').css('left', '0cm');
+                $('#open-drawer-btn').hide();
+            })
+        </script>
+    </div>
+
+    <section class="body">
+
+        <h1>Feedback</h1>
+
+        <div class="option">
+            
+            <p>The feedback page is still under development, if you need to leave feedback, go to the GitHub page: *insert*</p>
+
+        </div>
+        <hr />
+    </section>
+
+    <script>
+        window.vars.loadSettings();
+        $('.body')[0].addEventListener('mousedown', window.vars.saveSettings)
+    </script>
+
+    <div class="app-drawer">
+        <div class="app-drawer-header">
+            <button class="app-btn" id="close-drawer-btn">
+                <img src="images/close.svg" />
+            </button>
+
+            <script>
+                document.querySelector('#close-drawer-btn').addEventListener('click', function () {
+                    $('.app-drawer').css('left', '-7cm');
+                    $('#open-drawer-btn').show();
+                })
+            </script>
+        </div>
+        <br />
+        <ul class="app-drawer-menu">
+            <h2>Menu</h2>
+            <li class="app-drawer-menu item" onclick="navTo('index.html')">
+                <img src="images/home.svg" />
+                Home
+            </li>
+            <li class="app-drawer-menu item" onclick="navTo('settings.html')">
+                <img src="images/settings.svg" />
+                Settings
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        function navTo(href) {
+            window.location.href = href
+        }
+    </script>
+
+    <script>
+        $('.app-drawer').css('left', '-7cm');
+    </script>
+
+    <script src="scripts/lib/jquery.min.js"></script>
+    <script src="scripts/swipeDetector.js"></script>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+</body>
+
+</html>
